@@ -7,13 +7,9 @@
     <div class="box-header with-border">
       <h3 class="box-title">Categories</h3>
       <div class="box-tools pull-right">
-        <!-- Buttons, labels, and many other things can be placed here! -->
-        <!-- Here is a label for example -->
         <a class="btn btn-primary" href="{{route('categories.create')}}">Add category</a>
       </div>
-      <!-- /.box-tools -->
     </div>
-    <!-- /.box-header -->
     <div class="box-body">
         <table class="table">
             <thead>
@@ -26,14 +22,13 @@
                 @foreach ($categories as $category)
                     <tr>
                         <td>{{$category->id}}</td>
-                        <td>{{$category->name}}</td>
+                        {{-- <td>{{$category->name}}</td> --}}
+                        <td><a href="{{route('category',$category->id)}}">{{$category->name}}</a></td>
                     </tr>
                 @endforeach
             @endif
         </table>
     </div>
-    <!-- /.box-body -->
   </div>
-  <!-- /.box -->
 
 @stop

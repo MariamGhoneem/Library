@@ -49,6 +49,11 @@
                                 </li>
                             @endif
                         @else
+                            <li>
+                                <a href="{{route('upload')}}" class="nav-link " >
+                                    Upload
+                                </a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
@@ -71,9 +76,18 @@
                 </div>
             </div>
         </nav>
-
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-9">
+                    @yield('content')
+                </div>
+                <div class="col-md-3 text-center">
+                    @include('layouts.categories')
+                </div>
+            </div>
+        </div>
         <main class="py-4">
-            @yield('content')
+            
         </main>
     </div>
 </body>

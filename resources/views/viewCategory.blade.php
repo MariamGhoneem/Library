@@ -3,7 +3,7 @@
 @section('content')
 
             <div class="card">
-                <div class="card-header text-center">All Books</div>
+                <div class="card-header text-center">{{$category->name}}</div>
 
                 <div class="card-body">
                     @if (count($books)>0)
